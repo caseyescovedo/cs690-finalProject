@@ -1,0 +1,15 @@
+/workspaces/cs690-finalProject/event-planning/event-with-main/bin/Debug/net10.0/event-with-main
+/workspaces/cs690-finalProject/event-planning/event-with-main/bin/Debug/net10.0/event-with-main.deps.json
+/workspaces/cs690-finalProject/event-planning/event-with-main/bin/Debug/net10.0/event-with-main.runtimeconfig.json
+/workspaces/cs690-finalProject/event-planning/event-with-main/bin/Debug/net10.0/event-with-main.dll
+/workspaces/cs690-finalProject/event-planning/event-with-main/bin/Debug/net10.0/event-with-main.pdb
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.AssemblyInfoInputs.cache
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.AssemblyInfo.cs
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.csproj.CoreCompileInputs.cache
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.sourcelink.json
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.dll
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/refint/event-with-main.dll
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.pdb
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/event-with-main.genruntimeconfig.cache
+/workspaces/cs690-finalProject/event-planning/event-with-main/obj/Debug/net10.0/ref/event-with-main.dll
