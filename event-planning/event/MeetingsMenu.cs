@@ -18,7 +18,7 @@ public class MeetingsMenu
             var meetingOptions = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("Meetings Manager")
-                    .AddChoices(new[] { "See Schedule", "Create Meeting", "Cancel Meeting", "Back" })
+                    .AddChoices(new[] { "See Schedule", "Create Meeting", "Edit Meeting", "Cancel Meeting", "Back" })
             );
 
             if (meetingOptions == "Back")
@@ -55,6 +55,54 @@ public class MeetingsMenu
                 dataManager.AddMeeting(meeting);
 
                 AnsiConsole.MarkupLine($"[green]Meeting '{newMeetingName}' scheduled for {newMeetingTime:yyyy-MM-dd HH:mm}[/]");
+            }
+            else if (meetingOptions == "Edit Meeting")
+            {
+                if (dataManager.Meetings.Count == 0)
+                {
+                    AnsiConsole.MarkupLine("[yellow]No meetings scheduled to edit.[/]");
+                    continue;
+                }
+
+                var allMeetings = dataManager.Meetings
+                    .Select(m => $"{m.Title} - {m.Time:yyyy-MM-dd HH:mm}")
+                    .ToList();
+                allMeetings.Add("Cancel / Exit");
+
+                var selectedMeeting = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("Which meeting do you want to edit?")
+                        .AddChoices(allMeetings)
+                );
+
+                if (selectedMeeting == "Cancel / Exit")
+                    continue;
+
+                var meeting = dataManager.Meetings
+                    .First(m => $"{m.Title} - {m.Time:yyyy-MM-dd HH:mm}" == selectedMeeting);
+
+                var newTitle = AnsiConsole.Prompt(
+                    new TextPrompt<string>("Title:")
+                        .DefaultValue(meeting.Title)
+                        .Validate(title =>
+                        {
+                            return string.IsNullOrWhiteSpace(title)
+                                ? ValidationResult.Error("[red]Title cannot be empty[/]")
+                                : ValidationResult.Success();
+                        }));
+
+                var newTime = AnsiConsole.Prompt(
+                    new TextPrompt<DateTime>("Date and time (yyyy-MM-dd HH:mm):")
+                        .DefaultValue(meeting.Time)
+                        .Validate(date =>
+                        {
+                            return date < DateTime.Now
+                                ? ValidationResult.Error("[red]Meeting cannot be in the past[/]")
+                                : ValidationResult.Success();
+                        }));
+
+                dataManager.UpdateMeeting(meeting, new DataManager.Meeting(newTitle, newTime));
+                AnsiConsole.MarkupLine($"[green]Meeting updated to '{newTitle}' at {newTime:yyyy-MM-dd HH:mm}[/]");
             }
             else if (meetingOptions == "Cancel Meeting")
             {

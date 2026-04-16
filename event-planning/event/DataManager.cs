@@ -148,6 +148,13 @@ public class DataManager
         File.WriteAllLines("meetings.txt", Meetings.Select(m => $"{m.Title}|{m.Time:yyyy-MM-dd HH:mm}"));
     }
 
+    public void UpdateMeeting(Meeting oldMeeting, Meeting newMeeting)
+    {
+        var index = Meetings.IndexOf(oldMeeting);
+        Meetings[index] = newMeeting;
+        File.WriteAllLines("meetings.txt", Meetings.Select(m => $"{m.Title}|{m.Time:yyyy-MM-dd HH:mm}"));
+    }
+
     public List<Meeting> GetMeetings(){
     return new List<Meeting>(Meetings);
     }
