@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "JDPpyVW/etE=",
+  "dgSpecHash": "89a4aMAqxO0=",
   "success": true,
-  "projectFilePath": "/workspaces/cs690-finalProject/event-planning/event/event.csproj",
+  "projectFilePath": "/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/event.csproj",
   "expectedPackageFiles": [
-    "/home/codespace/.nuget/packages/spectre.console/0.49.1/spectre.console.0.49.1.nupkg.sha512",
-    "/home/codespace/.nuget/packages/spectre.console.cli/0.49.1/spectre.console.cli.0.49.1.nupkg.sha512"
+    "/Users/caseyescovedo/.nuget/packages/spectre.console/0.49.1/spectre.console.0.49.1.nupkg.sha512",
+    "/Users/caseyescovedo/.nuget/packages/spectre.console.cli/0.49.1/spectre.console.cli.0.49.1.nupkg.sha512"
   ],
   "logs": []
 }

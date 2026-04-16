@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/cs690-finalProject/event-planning/event/event.csproj": {}
+    "/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/event.csproj": {}
   },
   "projects": {
-    "/workspaces/cs690-finalProject/event-planning/event/event.csproj": {
+    "/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/event.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/cs690-finalProject/event-planning/event/event.csproj",
+        "projectUniqueName": "/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/event.csproj",
         "projectName": "event",
-        "projectPath": "/workspaces/cs690-finalProject/event-planning/event/event.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/cs690-finalProject/event-planning/event/obj/",
+        "projectPath": "/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/event.csproj",
+        "packagesPath": "/Users/caseyescovedo/.nuget/packages/",
+        "outputPath": "/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "/Users/caseyescovedo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.105/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.105/libexec/sdk/10.0.105/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
