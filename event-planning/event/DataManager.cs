@@ -142,6 +142,12 @@ public class DataManager
         File.AppendAllText("meetings.txt", meetingData + Environment.NewLine);
     }
 
+    public void RemoveMeeting(Meeting meeting)
+    {
+        Meetings.Remove(meeting);
+        File.WriteAllLines("meetings.txt", Meetings.Select(m => $"{m.Title}|{m.Time:yyyy-MM-dd HH:mm}"));
+    }
+
     public List<Meeting> GetMeetings(){
     return new List<Meeting>(Meetings);
     }

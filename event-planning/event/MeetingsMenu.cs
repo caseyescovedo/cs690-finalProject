@@ -58,22 +58,30 @@ public class MeetingsMenu
             }
             else if (meetingOptions == "Cancel Meeting")
             {
-                var allMeetings = dataManager.Meetings
-                    .Select(m => $"{m.Title} - {m.Time:yyyy-MM-dd HH:mm}")
-                    .ToList();
-                allMeetings.Add("Cancel / Exit");
-
-                if (allMeetings.Count == 0)
+                if (dataManager.Meetings.Count == 0)
                 {
                     AnsiConsole.MarkupLine("[yellow]No meetings scheduled to cancel.[/]");
                     continue;
                 }
+
+                var allMeetings = dataManager.Meetings
+                    .Select(m => $"{m.Title} - {m.Time:yyyy-MM-dd HH:mm}")
+                    .ToList();
+                allMeetings.Add("Cancel / Exit");
 
                 var selectedMeeting = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                         .Title("Which meeting do you want to cancel?")
                         .AddChoices(allMeetings)
                 );
+
+                if (selectedMeeting == "Cancel / Exit")
+                    continue;
+
+                var meeting = dataManager.Meetings
+                    .First(m => $"{m.Title} - {m.Time:yyyy-MM-dd HH:mm}" == selectedMeeting);
+                dataManager.RemoveMeeting(meeting);
+                AnsiConsole.MarkupLine($"[red]Meeting '{meeting.Title}' has been cancelled.[/]");
             }
         }
     }
