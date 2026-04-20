@@ -1,4 +1,4 @@
-namespace BusShuttle;
+namespace EventPlanning;
 
 using Spectre.Console;
 
@@ -30,7 +30,7 @@ public class ConsoleUI
                 break;
 
             case "Volunteers":
-                Console.WriteLine("You are now in Volunteers");
+                new VolunteersMenu(dataManager).Show();
                 break;
 
             case "Budget":

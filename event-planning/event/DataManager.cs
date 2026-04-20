@@ -1,4 +1,4 @@
-namespace BusShuttle;
+namespace EventPlanning;
 
 public class DataManager
 {
@@ -25,10 +25,10 @@ public class DataManager
     public class Task
     {
         public string Title { get; }
-        public string VolunteerName { get; }
+        public string VolunteerName { get; set; }
         public TaskStatus Status { get; set; }
 
-        public Task(string title, string volunteerName, TaskStatus status = TaskStatus.NotStarted)
+        public Task(string title, string volunteerName = "Unassigned", TaskStatus status = TaskStatus.NotStarted)
         {
             Title = title;
             VolunteerName = volunteerName;
@@ -183,6 +183,12 @@ public class DataManager
         File.AppendAllText("volunteers.txt", volunteer.Name + Environment.NewLine);
     }
 
+    public void RemoveVolunteer(Volunteer volunteer)
+    {
+        Volunteers.Remove(volunteer);
+        File.WriteAllLines("volunteers.txt", Volunteers.Select(v => v.Name));
+    }
+
     public void AddTask(Task task)
     {
         Tasks.Add(task);
@@ -192,6 +198,12 @@ public class DataManager
     public void UpdateTaskStatus(Task task, TaskStatus status)
     {
         task.Status = status;
+        File.WriteAllLines("tasks.txt", Tasks.Select(t => $"{t.Title}|{t.VolunteerName}|{t.Status}"));
+    }
+
+    public void AssignTask(Task task, string volunteerName)
+    {
+        task.VolunteerName = volunteerName;
         File.WriteAllLines("tasks.txt", Tasks.Select(t => $"{t.Title}|{t.VolunteerName}|{t.Status}"));
     }
 
