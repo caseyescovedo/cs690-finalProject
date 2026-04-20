@@ -1,4 +1,4 @@
-﻿namespace BusShuttle;
+﻿namespace EventPlanning;
 
 class Program
 {

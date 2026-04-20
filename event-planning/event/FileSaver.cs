@@ -1,4 +1,4 @@
-namespace BusShuttle;
+namespace EventPlanning;
 
 using System.IO;
 

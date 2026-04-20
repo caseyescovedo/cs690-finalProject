@@ -1,4 +1,4 @@
-namespace BusShuttle;
+namespace EventPlanning;
 
 public class Reporter {
     public static Stop FindBusiestStop(List<PassengerData> data) {

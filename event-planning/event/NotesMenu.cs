@@ -1,4 +1,4 @@
-namespace BusShuttle;
+namespace EventPlanning;
 
 using Spectre.Console;
 

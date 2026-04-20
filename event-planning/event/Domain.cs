@@ -1,4 +1,4 @@
-namespace BusShuttle;
+namespace EventPlanning;
 
 public class Stop {
     public string Name { get; }
