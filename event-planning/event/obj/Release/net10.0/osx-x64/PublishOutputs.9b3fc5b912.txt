@@ -1,0 +1,2 @@
+/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/bin/Release/net10.0/osx-x64/publish/event.pdb
+/Users/caseyescovedo/Documents/devprojects/cs690-finalProject/event-planning/event/bin/Release/net10.0/osx-x64/publish/event
