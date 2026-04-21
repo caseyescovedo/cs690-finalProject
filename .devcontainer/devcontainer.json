@@ -1,0 +1,5 @@
+{
+  "name": "Event Planning",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+  "postCreateCommand": "dotnet restore event-planning/event/event.csproj && dotnet restore event-planning/event.tests/event.Tests.csproj"
+}
