@@ -93,7 +93,7 @@ public class TasksMenu
                 }
 
                 var taskChoices = dataManager.Tasks
-                    .Select(t => $"{t.Title} [{t.VolunteerName}]")
+                    .Select(t => $"{t.Title} [[{t.VolunteerName}]]")
                     .ToList();
                 taskChoices.Add("Cancel / Exit");
 

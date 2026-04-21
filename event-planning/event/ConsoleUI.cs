@@ -13,37 +13,43 @@ public class ConsoleUI
 
     public void Show()
     {
-        var mode = AnsiConsole.Prompt(
-            new SelectionPrompt<string>()
-                .Title("Event Manager Menu")
-                .AddChoices(new[] { "Meetings", "Layout", "Volunteers", "Budget", "Notes", "Tasks" })
-        );
-
-        switch (mode)
+        while (true)
         {
-            case "Meetings":
-                new MeetingsMenu(dataManager).Show();
-                break;
+            var mode = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("Event Manager Menu")
+                    .AddChoices(new[] { "Meetings", "Layout", "Volunteers", "Budget", "Notes", "Tasks", "Exit" })
+            );
 
-            case "Layout":
-                new LayoutMenu(dataManager).Show();
-                break;
+            if (mode == "Exit")
+                return;
 
-            case "Volunteers":
-                new VolunteersMenu(dataManager).Show();
-                break;
+            switch (mode)
+            {
+                case "Meetings":
+                    new MeetingsMenu(dataManager).Show();
+                    break;
 
-            case "Budget":
-                new BudgetMenu(dataManager).Show();
-                break;
+                case "Layout":
+                    new LayoutMenu(dataManager).Show();
+                    break;
 
-            case "Notes":
-                new NotesMenu(dataManager).Show();
-                break;
+                case "Volunteers":
+                    new VolunteersMenu(dataManager).Show();
+                    break;
 
-            case "Tasks":
-                new TasksMenu(dataManager).Show();
-                break;
+                case "Budget":
+                    new BudgetMenu(dataManager).Show();
+                    break;
+
+                case "Notes":
+                    new NotesMenu(dataManager).Show();
+                    break;
+
+                case "Tasks":
+                    new TasksMenu(dataManager).Show();
+                    break;
+            }
         }
     }
 
