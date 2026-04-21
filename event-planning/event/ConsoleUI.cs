@@ -26,7 +26,7 @@ public class ConsoleUI
                 break;
 
             case "Layout":
-                Console.WriteLine("You are now in Layout");
+                new LayoutMenu(dataManager).Show();
                 break;
 
             case "Volunteers":

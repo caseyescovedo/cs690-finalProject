@@ -9,8 +9,21 @@ public class DataManager
     public decimal? BudgetCap { get; private set; }
     public List<Volunteer> Volunteers { get; }
     public List<Task> Tasks { get; }
+    public List<LayoutSpace> Layout { get; }
 
     public enum TaskStatus { NotStarted, InProgress, Done }
+
+    public class LayoutSpace
+    {
+        public int Number { get; }
+        public string Vendor { get; set; }
+
+        public LayoutSpace(int number, string vendor = "Unassigned")
+        {
+            Number = number;
+            Vendor = vendor;
+        }
+    }
 
     public class Volunteer
     {
@@ -78,6 +91,17 @@ public class DataManager
         BudgetItems = new List<BudgetItem>();
         Volunteers = new List<Volunteer>();
         Tasks = new List<Task>();
+        Layout = Enumerable.Range(1, 10).Select(i => new LayoutSpace(i)).ToList();
+        if (File.Exists("layout.txt"))
+        {
+            foreach (var line in File.ReadAllLines("layout.txt"))
+            {
+                if (string.IsNullOrWhiteSpace(line)) continue;
+                var parts = line.Split("|", 2);
+                if (parts.Length == 2 && int.TryParse(parts[0], out var num) && num >= 1 && num <= 10)
+                    Layout[num - 1].Vendor = parts[1];
+            }
+        }
         if (File.Exists("volunteers.txt"))
         {
             foreach (var line in File.ReadAllLines("volunteers.txt"))
@@ -211,6 +235,11 @@ public class DataManager
     {
         Tasks.Remove(task);
         File.WriteAllLines("tasks.txt", Tasks.Select(t => $"{t.Title}|{t.VolunteerName}|{t.Status}"));
+    }
+
+    public void SaveLayout()
+    {
+        File.WriteAllLines("layout.txt", Layout.Select(s => $"{s.Number}|{s.Vendor}"));
     }
 
     public void AddNote(Note note)
